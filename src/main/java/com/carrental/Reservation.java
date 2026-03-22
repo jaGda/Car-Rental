@@ -8,13 +8,13 @@ public class Reservation {
     private final String id;
     private final CarType carType;
     private final LocalDateTime startDateTime;
-    private final int durationDays;
+    private final int rentalDays;
 
-    public Reservation(String id, CarType carType, LocalDateTime startDateTime, int durationDays) {
+    public Reservation(String id, CarType carType, LocalDateTime startDateTime, int rentalDays) {
         this.id = Objects.requireNonNull(id, "id must not be null");
         this.carType = Objects.requireNonNull(carType, "carType must not be null");
         this.startDateTime = Objects.requireNonNull(startDateTime, "startDateTime must not be null");
-        this.durationDays = durationDays;
+        this.rentalDays = rentalDays;
     }
 
     public String getId() {
@@ -29,11 +29,11 @@ public class Reservation {
         return startDateTime;
     }
 
-    public int getDurationDays() {
-        return durationDays;
+    public int getRentalDays() {
+        return rentalDays;
     }
 
     public LocalDateTime getEndDateTime() {
-        return startDateTime.plusDays(durationDays);
+        return startDateTime.plusDays(rentalDays);
     }
 }

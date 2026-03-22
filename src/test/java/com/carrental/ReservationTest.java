@@ -20,7 +20,7 @@ class ReservationTest {
         assertEquals(ID, r.getId());
         assertEquals(CarType.SUV, r.getCarType());
         assertEquals(NOW, r.getStartDateTime());
-        assertEquals(5, r.getDurationDays());
+        assertEquals(5, r.getRentalDays());
     }
 
     @Test
